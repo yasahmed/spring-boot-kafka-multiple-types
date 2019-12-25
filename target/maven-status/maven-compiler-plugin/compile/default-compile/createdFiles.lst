@@ -1,0 +1,6 @@
+com/memorynotfound/kafka/Foo.class
+com/memorynotfound/kafka/consumer/FooListenerConfig.class
+com/memorynotfound/kafka/producer/FooSender.class
+com/memorynotfound/kafka/SpringKafkaApplication.class
+com/memorynotfound/kafka/producer/FooSenderConfig.class
+com/memorynotfound/kafka/consumer/FooListener.class
