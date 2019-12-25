@@ -1,4 +1,4 @@
 package com.memorynotfound.kafka;
 
-public class base {
+public class Base {
 }

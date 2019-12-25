@@ -1,8 +1,6 @@
 package com.memorynotfound.kafka.producer;
 
-import com.memorynotfound.kafka.Baar;
-import com.memorynotfound.kafka.Foo;
-import com.memorynotfound.kafka.base;
+import com.memorynotfound.kafka.Base;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class FooSenderConfig {
+public class SenderConfig {
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -32,13 +30,13 @@ public class FooSenderConfig {
     }
 
     @Bean
-    public ProducerFactory<String, base> producerFactoryBaar() {
+    public ProducerFactory<String, Base> producerFactoryBaar() {
         return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
 
     @Bean
-    public KafkaTemplate<String, base> kafkaTemplateBaar() {
+    public KafkaTemplate<String, Base> kafkaTemplateBaar() {
         return new KafkaTemplate<>(producerFactoryBaar());
     }
 

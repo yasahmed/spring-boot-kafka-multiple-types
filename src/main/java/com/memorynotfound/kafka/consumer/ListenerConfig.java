@@ -1,8 +1,6 @@
 package com.memorynotfound.kafka.consumer;
 
-import com.memorynotfound.kafka.Baar;
-import com.memorynotfound.kafka.Foo;
-import com.memorynotfound.kafka.base;
+import com.memorynotfound.kafka.Base;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +21,7 @@ import java.util.Map;
 
 @Configuration
 @EnableKafka
-public class FooListenerConfig {
+public class ListenerConfig {
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -38,17 +36,17 @@ public class FooListenerConfig {
         return props;
     }
 
-    public ConsumerFactory<String, base> consumerFactoryFaa() {
+    public ConsumerFactory<String, Base> consumerFactoryFaa() {
         return new DefaultKafkaConsumerFactory<>(
                 consumerConfigs(),
                 new StringDeserializer(),
-                new JsonDeserializer<>(base.class));
+                new JsonDeserializer<>(Base.class));
     }
 
 
     @Bean
-    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, base>> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, base> factory;
+    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, Base>> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, Base> factory;
         factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactoryFaa());
         return factory;

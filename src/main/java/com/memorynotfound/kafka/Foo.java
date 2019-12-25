@@ -1,6 +1,6 @@
 package com.memorynotfound.kafka;
 
-public class Foo extends base  {
+public class Foo extends Base {
 
     private String name;
     private String description;
