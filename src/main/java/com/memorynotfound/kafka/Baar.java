@@ -2,30 +2,30 @@ package com.memorynotfound.kafka;
 
 public class Baar extends base {
 
-    private String  name;
+    private String  firstname;
 
     public Baar() {
     }
 
 
-    public Baar(String name)
+    public Baar(String firstname)
     {
-        this.name=name;
+        this.firstname=firstname;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
 
     @Override
     public String toString() {
         return "Baar{" +
-                "name='" + name + '\'' +
+                "firstname='" + firstname + '\'' +
                 '}';
     }
 }

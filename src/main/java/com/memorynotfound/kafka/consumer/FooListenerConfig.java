@@ -2,6 +2,7 @@ package com.memorynotfound.kafka.consumer;
 
 import com.memorynotfound.kafka.Baar;
 import com.memorynotfound.kafka.Foo;
+import com.memorynotfound.kafka.base;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,17 +38,17 @@ public class FooListenerConfig {
         return props;
     }
 
-    public ConsumerFactory<String, Foo> consumerFactoryFaa() {
+    public ConsumerFactory<String, base> consumerFactoryFaa() {
         return new DefaultKafkaConsumerFactory<>(
                 consumerConfigs(),
                 new StringDeserializer(),
-                new JsonDeserializer<>(Foo.class));
+                new JsonDeserializer<>(base.class));
     }
 
 
     @Bean
-    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, Foo>> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, Foo> factory;
+    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, base>> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, base> factory;
         factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactoryFaa());
         return factory;

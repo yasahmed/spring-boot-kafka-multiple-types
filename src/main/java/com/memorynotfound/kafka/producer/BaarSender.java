@@ -35,7 +35,7 @@ public class BaarSender {
     }
 
     public void sendFoo(Foo data){
-        LOG.info("sending BAAR data='{}' to topic='{}'", data, topic);
+        LOG.info("sending Foo data='{}' to topic='{}'", data, topic);
 
 
         Message<Foo> message = MessageBuilder
